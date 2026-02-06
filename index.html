@@ -844,7 +844,7 @@
               args.push("-c:a", "libmp3lame", "-b:a", `${quality}k`);
               break;
             case "aac":
-              args.push("-c:a", "libfdk_aac", "-b:a", `${quality}k`);
+              args.push("-c:a", "libfdk_aac", "-profile:a", "aac_he_v2", "-b:a", `${quality}k`);
               break;
             case "ogg":
               args.push("-c:a", "libvorbis", "-b:a", `${quality}k`);
