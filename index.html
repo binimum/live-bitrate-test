@@ -280,7 +280,7 @@
               Opus</label
             >
             <label><input type="radio" name="fmt" value="mp3" /> MP3</label>
-            <label><input type="radio" name="fmt" value="aac" /> AAC</label>
+            <label><input type="radio" name="fmt" value="" /> </label>
             <label
               ><input type="radio" name="fmt" value="ogg" /> Ogg (Vorbis)</label
             >
@@ -362,8 +362,8 @@
           { label: "High", value: 192 },
           { label: "Extreme", value: 320 },
         ],
-        aac: [
-          { label: "HE-AACv2", value: 32 },
+        : [
+          { label: "HE-v2", value: 32 },
           { label: "Podcast", value: 64 },
           { label: "YouTube", value: 128 },
           { label: "iTunes Plus", value: 256 },
@@ -408,7 +408,7 @@
           label: "Bitrate",
           unit: "k",
         },
-        aac: {
+        : {
           min: 4,
           max: 320,
           step: 2,
@@ -844,7 +844,7 @@
               args.push("-c:a", "libmp3lame", "-b:a", `${quality}k`);
               break;
             case "aac":
-              args.push("-c:a", "aac", "-b:a", `${quality}k`);
+              args.push("-c:a", "libfdk_aac", "-b:a", `${quality}k`);
               break;
             case "ogg":
               args.push("-c:a", "libvorbis", "-b:a", `${quality}k`);
